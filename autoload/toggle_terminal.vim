@@ -15,7 +15,7 @@ set cpo&vim
 
 let g:toggle_terminal#command = get(g:,'toggle_terminal#command','shell')
 
-function toggle_terminal#ToggleTerminal()
+function! toggle_terminal#toggle_terminal()
     let bufferNum = bufnr('ToggleTerminal')
     if bufferNum == -1 || bufloaded(bufferNum) != 1
         execute 'rightbelow term ++close ++kill=term '.g:toggle_terminal#command
