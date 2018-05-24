@@ -13,10 +13,12 @@ let g:loaded_toggle_terminal = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+let g:toggle_terminal#command = get(g:,'toggle_terminal#command','shell')
+
 function toggle_terminal#ToggleTerminal()
     let bufferNum = bufnr('ToggleTerminal')
     if bufferNum == -1 || bufloaded(bufferNum) != 1
-        execute 'rightbelow term ++close ++kill=term '.powershell
+        execute 'rightbelow term ++close ++kill=term '.g:toggle_terminal#command
         file ToggleTerminal
     else
         let windowNum = bufwinnr(bufferNum)
