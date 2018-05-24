@@ -1,6 +1,12 @@
 # toggle-terminal
 Toggle :terminal for Vim8 or later
 
+## Install
+### vim-plug
+```
+Plug 'pakutoma/toggle-terminal'
+```
+
 ## Usage
 ```
 " map <C-@> to toggle
