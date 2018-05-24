@@ -13,7 +13,7 @@ let g:loaded_toggle_terminal = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! -nargs=0 ToggleTerminal call toggle_terminal#toggle_terminal()
+command! -nargs=0 ToggleTerminal call toggle_terminal#ToggleTerminal()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
