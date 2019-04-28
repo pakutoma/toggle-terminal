@@ -9,16 +9,17 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let g:toggle_terminal#command = get(g:,'toggle_terminal#command','shell')
+let g:toggle_terminal#position = get(g:,'toggle_terminal#position','belowleft')
 
 function! toggle_terminal#ToggleTerminal()
     let bufferNum = bufnr('ToggleTerminal')
     if bufferNum == -1 || bufloaded(bufferNum) != 1
-        execute 'rightbelow term ++close ++kill=term '.g:toggle_terminal#command
+        execute g:toggle_terminal#position.' term ++close ++kill=term '.g:toggle_terminal#command
         file ToggleTerminal
     else
         let windowNum = bufwinnr(bufferNum)
         if windowNum == -1
-            execute 'rightbelow sbuffer '.bufferNum
+            execute g:toggle_terminal#position.' sbuffer '.bufferNum
         else
             execute windowNum.'wincmd w'
             hide 

@@ -16,3 +16,6 @@ nnoremap <silent> <C-@> :ToggleTerminal<CR>
 " set your favorite shell
 let g:toggle_terminal#command = 'powershell'
 ```
+" set terminal window position
+" (see possible options at :help vertical)
+let g:toggle_terminal#position = 'topleft'
