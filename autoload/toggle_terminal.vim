@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let g:toggle_terminal#command = get(g:,'toggle_terminal#command','shell')
-let g:toggle_terminal#position = get(g:,'toggle_terminal#position','belowright')
+let g:toggle_terminal#position = get(g:,'toggle_terminal#position','botright')
 
 function! toggle_terminal#ToggleTerminal()
     let bufferNum = bufnr('ToggleTerminal')
